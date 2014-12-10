@@ -20,7 +20,8 @@ setup(
     keywords="scopely ansible aws",
     url="https://github.com/scopely-devops/scopelets",
     packages=find_packages(exclude=['tests*']),
-    package_data={'scopelets': ['_version']},
+    package_data={'scopelets': ['_version'],
+                  '': ['LICENSE']},
     package_dir={'scopelets': 'scopelets'},
     install_requires=requires,
     classifiers=[
