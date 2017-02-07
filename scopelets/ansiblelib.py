@@ -70,17 +70,6 @@ def run_playbook(
         playbook
     )
 
-    if retry:
-        retry_file = "{0}.retry".format(
-            os.path.basename(playbook)
-        ).replace(".yml", "")
-        retry_path = os.path.expanduser(os.path.join("~", retry_file))
-        if os.path.exists(retry_path):
-            ansible_invocation += [
-                "--limit",
-                "@" + retry_path
-            ]
-
     env = os.environ.copy()
     env['ANSIBLE_HOST_KEY_CHECKING'] = "False"
     env['PYTHONUNBUFFERED'] = "True"
